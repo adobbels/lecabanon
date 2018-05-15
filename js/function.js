@@ -6,14 +6,14 @@
 * ---------------------------------------------------------------------------------------- */
 (function ($) {
     "use strict";
-	
-	var $window = $(window); 
-	
+
+	var $window = $(window);
+
 	/* Preloader Effect */
 	$window.load(function() {
 	    $(".preloader").fadeOut(600);
     });
-	
+
 	/* Top Menu */
 	$('#navigation ul li a').on('click', function(){
 		var id = $(this).attr('href');
@@ -25,16 +25,17 @@
 
 		return false;
 	});
-	
-	/* Sticky header */
+
+  /* Sticky header */
+	/* it was 200 instead of -1 */
 	$window.scroll(function(){
-    	if ($window.scrollTop() > 200) {
+    	if ($window.scrollTop() > -1) {
 			$('.navbar').addClass('sticky-header');
 		} else {
 			$('.navbar').removeClass('sticky-header');
 		}
 	});
-	
+
 	/* slick nav */
 	$('#main-menu').slicknav({prependTo:'#responsive-menu',label:''});
 
@@ -48,11 +49,11 @@
 			0 : {
 				items: 1
 			},
-			 
+
 			768 : {
 				items: 2
 			},
-			
+
 			1024 : {
 				items: 3
 			}
@@ -63,5 +64,5 @@
 		autoplaySpeed: 1000,
 		navText: [ '<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
 	});
-	
+
 })(jQuery);
